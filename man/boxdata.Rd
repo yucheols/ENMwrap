@@ -20,5 +20,5 @@ A data.frame of formatted for use in ggplot2
 Miscellaneous tool to aid data visualization: format environmental data extracted from rasters to make boxplots in ggplot2
 }
 \examples{
-get.box.data <- boxdata(sp.name = 'Bufo stejnegeri', envs = envs, pts = occs)
+get.box.data <- boxdata(sp.name = 'Karsenia koreana', envs = envs, pts = occs)
 }

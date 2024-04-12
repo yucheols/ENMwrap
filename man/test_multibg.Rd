@@ -43,5 +43,5 @@ A named list with slots for model metrics of selected models, model objects, mod
 MaxEnt model tuning with multiple background datasets
 }
 \examples{
-test_bg <- test_multibg(taxon.name = 'Bufo stejnegeri', occs = occs, envs = envs, bg.list(bg1, bg2, bg3), tune.args = tune.args, partitions = 'randomkfold', partition.settings = list(kfolds = 10, type = 'type1'))
+test_bg <- test_multibg(taxon.name = 'Karsenia koreana', occs = occs, envs = envs, bg.list(bg1, bg2, bg3), tune.args = tune.args, partitions = 'randomkfold', partition.settings = list(kfolds = 10), type = 'type1')
 }

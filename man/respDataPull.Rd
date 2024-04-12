@@ -20,5 +20,5 @@ A data.frame containing the response data that can be used to further customize 
 Extract MaxEnt response curve data for further plot customization
 }
 \examples{
-resp.data <- respDataPull(sp.name = 'Bufo stejnegeri', model = mx_model, var = c('bio1', 'bio12', 'slope'))
+resp.data <- respDataPull(sp.name = 'Karsenia koreana', model = mx_model, var = c('bio1', 'bio12', 'slope'))
 }

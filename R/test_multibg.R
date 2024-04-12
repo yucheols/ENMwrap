@@ -12,7 +12,7 @@
 #' If "type2" is used, the primary, secondary, and tertiary criteria for model selection would be delta.AICc smaller than 2, minimum 10% omission rate, and maximum validation AUC, respectively
 #' @return A named list with slots for model metrics of selected models, model objects, model predictions, and variable importance
 #' @examples
-#' test_bg <- test_multibg(taxon.name = 'Bufo stejnegeri', occs = occs, envs = envs, bg.list(bg1, bg2, bg3), tune.args = tune.args, partitions = 'randomkfold', partition.settings = list(kfolds = 10, type = 'type1'))
+#' test_bg <- test_multibg(taxon.name = 'Karsenia koreana', occs = occs, envs = envs, bg.list(bg1, bg2, bg3), tune.args = tune.args, partitions = 'randomkfold', partition.settings = list(kfolds = 10), type = 'type1')
 
 
 test_multibg <- function(taxon.name, occs, envs, bg.list, tune.args, partitions, partition.settings = NULL, user.grp = NULL, type) {
