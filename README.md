@@ -3,7 +3,7 @@ Ecological niche modeling tool that wraps around existing functions from other E
 
 ## Installation
 ```r
-install.packages('devtools)
+install.packages('devtools')
 
-devtools::install_github(yucheols/ENMwrap)
+devtools::install_github('yucheols/ENMwrap')
 ```
