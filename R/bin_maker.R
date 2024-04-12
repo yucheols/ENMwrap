@@ -7,6 +7,10 @@
 #' get.binary <- bin_maker(preds = enm.preds, th = list(0.1, 0.23, 0.43))
 
 bin_maker <- function(preds, th) {
+  require(ecospat)
+  require(terra)
+  require(raster)
+
   binary.maps <- list()
 
   for (i in 1:nlayers(preds)) {
