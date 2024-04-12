@@ -19,3 +19,6 @@ RasterStack of ENM predictions
 \description{
 Predict ecological niche models to multiple datasets
 }
+\examples{
+pred.enms <- model_predictr(model = mx_model, preds.list = list(lgm, mh, current), preds.names = c('LGM', 'Mid-Holocene', 'Current'))
+}

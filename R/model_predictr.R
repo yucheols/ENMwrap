@@ -5,7 +5,7 @@
 #' @param preds.names A vector of names corresponding to each dataset in "preds.list". Can be the name of a particular time period (e.g. LGM) or climate change scenario (e.g. SSP26)
 #' @return RasterStack of ENM predictions
 #' @examples
-#' pred.enms <- model_predictr(model = mx_model, preds.list = list(lgm, mh, current), preds.names = c('LGM', 'Mid-Holocene', 'Current))
+#' pred.enms <- model_predictr(model = mx_model, preds.list = list(lgm, mh, current), preds.names = c('LGM', 'Mid-Holocene', 'Current'))
 
 model_predictr <- function(model, preds.list, preds.names) {
   require(dismo)
