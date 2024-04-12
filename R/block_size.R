@@ -1,4 +1,5 @@
 #' Calculate the size of spatial blocks to use for data partitioning based on the estimation of spatial autocorrelation
+#'
 #' @param points A list of point datasets, each in a data.frame format with two columns in the order of "long" and "lat"
 #' @param raster RasterStack of environmental data to use for calculation
 #' @param num_sample Integer. The number of sample points to use. See ?cv_spatial_autocor documentation of the blockCV package for details
