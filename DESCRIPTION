@@ -1,11 +1,11 @@
 Package: ENMwrap
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Wrapper and other (hopefully) useful functions to generate Ecological Niche Models (ENMs)
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
+Author: Yucheol Shin
+Maintainer: Yucheol Shin <brongersmai2@gmail.com>
+Description: Ecological niche modeling tool that wraps around existing functions from other ENM packages, 
+    along with some other useful and miscellaneous functions. Currently under development.
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
