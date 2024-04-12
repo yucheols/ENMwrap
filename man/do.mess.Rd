@@ -21,3 +21,6 @@ RasterStack of MESS layer for each projection scenario
 \description{
 Conduct Multivariate Environmental Similiarity Surfaces (MESS) analysis across different projection scenarios
 }
+\examples{
+get.mess <- do.mess(proj.env = proj.stack, proj.names = c('LGM', 'Current', '2050'), ref.env = ref.stack, occs = occs)
+}

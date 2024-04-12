@@ -19,3 +19,6 @@ A data.frame object containing the maximum extracted cell values for calibration
 \description{
 Check the units of calibration and projection data, using the maximum value of extracted raster cell values
 }
+\examples{
+a <- unitCheck(ref.env = ref.stack, proj.env = proj.stack, n = 10000)
+}

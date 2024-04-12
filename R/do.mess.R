@@ -5,7 +5,7 @@
 #' @param ref.env RasterStack object of reference (= calibration) data
 #' @param occs A data.frame of species occurrence points containing two columns, with the "long" column followed by "lat" column
 #' @return RasterStack of MESS layer for each projection scenario
-#' @example
+#' @examples
 #' get.mess <- do.mess(proj.env = proj.stack, proj.names = c('LGM', 'Current', '2050'), ref.env = ref.stack, occs = occs)
 
 do.mess <- function(proj.env, proj.names, ref.env, occs) {
