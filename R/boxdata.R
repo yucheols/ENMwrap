@@ -2,7 +2,7 @@
 #' @param sp.name Charcter. Input species name
 #' @param envs RasterStack of environmental layers
 #' @param pts A data.frame of species occurrence points having two columns, in the order of "long" and "lat"
-#' @return A data.frame of formatted for use in ggplot2
+#' @returns A data.frame of formatted for use in ggplot2
 #' @examples
 #' get.box.data <- boxdata(sp.name = 'Karsenia koreana', envs = envs, pts = occs)
 

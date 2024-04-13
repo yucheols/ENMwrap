@@ -9,7 +9,7 @@
 #' @param method Character. Method to use for background sampling. If "random" is used, the background points are sampled randomly from the provided raster layer.
 #' If "buffer" is used, the background points are sampled from within the boundary of provided buffer(s). If "bias.grid" is used, sample bias-corrected background points
 #' from the provided bias grid. The method is "random" by default
-#' @return A list containing sampled background points
+#' @returns A list containing sampled background points
 #' @examples
 #' bg <- bgSampler(envs = envs, n = 10000, occs_list = occs_list, method = 'random')
 

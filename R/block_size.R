@@ -4,7 +4,7 @@
 #' @param raster RasterStack of environmental data to use for calculation
 #' @param num_sample Integer. The number of sample points to use. See ?cv_spatial_autocor documentation of the blockCV package for details
 #' @param crs A coordinate reference system (CRS). Use the 4 digit numbers of EPSG codes
-#' @return A list of numbers indicating the size of spatial blocks to use
+#' @returns A list of numbers indicating the size of spatial blocks to use
 #' @examples
 #' get.block.size <- block_size(points = list(bg1, bg2, bg3), raster = envs, num_sample = 5000, crs = 4326)
 

@@ -2,7 +2,7 @@
 #'
 #' @param preds RasterStack object containing continuous ENM predictions
 #' @param th A list of numeric threshold values
-#' @return RasterStack of binary maps
+#' @returns RasterStack of binary maps
 #' @examples
 #' get.binary <- bin_maker(preds = enm.preds, th = list(0.1, 0.23, 0.43))
 

@@ -3,7 +3,7 @@
 #' @param targ.pts A data.frame of target group occurrence points containing two columns, in the order of "long" and "lat"
 #' @param envs RasterStack of environmental data
 #' @param poly SpatialPolygonsDataFrame object to mask the output bias grid
-#' @return RasterLayer of generated bias grid
+#' @returns RasterLayer of generated bias grid
 #' @examples
 #' bias <- get_bias_grid(targ.pts = targ.pts, envs = envs, poly = poly)
 

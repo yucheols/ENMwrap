@@ -3,7 +3,7 @@
 #' @param ref.env RasterStack object of calibration data
 #' @param proj.env RasterStack object of projection data
 #' @param n Numeric. The number of points to use to sample the input raster cells. This argument uses the "randomPoints" function of the dismo package
-#' @return A data.frame object containing the maximum extracted cell values for calibration and projection data, respectively
+#' @returns A data.frame object containing the maximum extracted cell values for calibration and projection data, respectively
 #' @examples
 #' a <- unitCheck(ref.env = ref.stack, proj.env = proj.stack, n = 10000)
 

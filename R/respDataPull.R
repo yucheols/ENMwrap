@@ -3,7 +3,7 @@
 #' @param sp.name Character. The name of the taxon being used in niche modeling
 #' @param model A fitted ENM of the class MaxEnt. Can be extracted by accessing the "models" slot output from "test_multibg" or "test_multisp"
 #' @param names.var Character. Names of environmental variables used to generate the MaxEnt model
-#' @return A data.frame containing the response data that can be used to further customize the response curve plots
+#' @returns A data.frame containing the response data that can be used to further customize the response curve plots
 #' @examples
 #' resp.data <- respDataPull(sp.name = 'Karsenia koreana', model = mx_model, var = c('bio1', 'bio12', 'slope'))
 

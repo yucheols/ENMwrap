@@ -4,7 +4,7 @@
 #' @param envs RasterLayer. The spatial resolution of this layer will be used as a spatial thinning distance
 #' @param long Character. Name of the longitude column
 #' @param lat Character. Name of the latitude column
-#' @return A list of dataframes containing the thinned occurrence points for each input species
+#' @returns A list of dataframes containing the thinned occurrence points for each input species
 #' @examples
 #' thin_occs <- occs_thinner(occs_list = occs_list, envs = envs, long = 'long', lat = 'lat')
 

@@ -5,7 +5,7 @@
 #' @param envs RasterStack of environmental variables
 #' @param k Integer. The number of spatial folds to generate
 #' @param block.size A list of block sizes output from the "block_size" function
-#' @return A list with two slots: one for occurrence partitions, another for background partitions
+#' @returns A list with two slots: one for occurrence partitions, another for background partitions
 #' @examples
 #' folds <- fold_maker(occs = occs, bg.list = list(bg1, bg2, bg3), envs = envs, k = 4, block.size = block.size)
 #'
