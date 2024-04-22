@@ -4,7 +4,7 @@
 \alias{do.mess}
 \title{Conduct Multivariate Environmental Similiarity Surfaces (MESS) analysis across different projection scenarios}
 \usage{
-\method{do}{mess}(proj.env, proj.names, ref.env, occs)
+do.mess(proj.env, proj.names, ref.env, occs)
 }
 \arguments{
 \item{proj.env}{RasterStack object of the porjction data}
