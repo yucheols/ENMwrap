@@ -8,8 +8,8 @@
 #' @param partitions Character. The name of data partitioning strategy to use for model evaluations. Can select from: "randomkfold", "block", "checkerboard1", "checkerboard2", "testing", and "user"
 #' @param partition.settings A named list used to specify settings for the selected partitioning scheme
 #' @param user.grp A named list designating user-specified cross-validation folds. Only required when "partition.settings" is set to "user"
-#' @param type Character. Select a method for selecting the optimal parameter combinations. If "type1" is used, the optimal model is selected based on the minimum 10% omission rate as a primary criterion, minimum AUCDIFF value as a secondary criterion, and maximum validation AUC as a tertiary criterion
-#' If "type2" is used, the primary, secondary, and tertiary criteria for model selection would be delta.AICc smaller than 2, minimum 10% omission rate, and maximum validation AUC, respectively
+#' @param type Character. Select a method for selecting the optimal parameter combinations. If "type1" is used, the optimal model is selected based on the minimum 10 percent omission rate as a primary criterion, minimum AUCDIFF value as a secondary criterion, and maximum validation AUC as a tertiary criterion.
+#' If "type2" is used, the primary, secondary, and tertiary criteria for model selection would be delta.AICc smaller than 2, minimum 10 percent omission rate, and maximum validation AUC, respectively
 #' @returns A named list with slots for model metrics of selected models, model objects, model predictions, and variable importance
 #' @examples
 #' test_sp <- test_multisp(taxon.list = c('sp1', 'sp2', 'sp3'), occs.list = list(occs1, occs2, occs3), envs = envs, bg = bg, tune.args = tune.args, partitions = 'randomkfold', partition.settings = list(kfolds = 10), type = 'type1')
