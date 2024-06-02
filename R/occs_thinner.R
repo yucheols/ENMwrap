@@ -19,7 +19,7 @@ occs_thinner <- function(occs_list, envs, long, lat, spp_list){
     thin <- SDMtune::thinData(coords = occs, env = terra::rast(envs), x = long, y = lat, verbose = T, progress = T)
     output[[i]] <- thin
   }
-  return(output)
   print('====================   DONE   ====================')
+  return(output)
 }
 
