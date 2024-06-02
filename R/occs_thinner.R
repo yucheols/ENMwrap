@@ -14,12 +14,12 @@ occs_thinner <- function(occs_list, envs, long, lat, spp_list){
   output <- list()
 
   for (i in 1:length(occs_list)) {
-    print(paste0('start thinning', spp_list[[i]]))
+    print(paste0('start thinning == ', spp_list[[i]]))
     occs <- occs_list[[i]]
     thin <- SDMtune::thinData(coords = occs, env = terra::rast(envs), x = long, y = lat, verbose = T, progress = T)
     output[[i]] <- thin
   }
   return(output)
-  print('Done!')
+  print('====================   DONE   ====================')
 }
 
