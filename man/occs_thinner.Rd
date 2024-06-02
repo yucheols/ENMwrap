@@ -4,7 +4,7 @@
 \alias{occs_thinner}
 \title{Spatial thinning of (multiple) species occurrence datasets, using the SDMtune package (Vignali et al. 2020)}
 \usage{
-occs_thinner(occs_list, envs, long, lat)
+occs_thinner(occs_list, envs, long, lat, spp_list)
 }
 \arguments{
 \item{occs_list}{A list of data.frame objects for species occurrence points. Need to have "long" and "lat" columns}
@@ -14,6 +14,8 @@ occs_thinner(occs_list, envs, long, lat)
 \item{long}{Character. Name of the longitude column}
 
 \item{lat}{Character. Name of the latitude column}
+
+\item{spp_list}{A list of input species names}
 }
 \value{
 A list of dataframes containing the thinned occurrence points for each input species
@@ -22,5 +24,5 @@ A list of dataframes containing the thinned occurrence points for each input spe
 Spatial thinning of (multiple) species occurrence datasets, using the SDMtune package (Vignali et al. 2020)
 }
 \examples{
-thin_occs <- occs_thinner(occs_list = occs_list, envs = envs, long = 'long', lat = 'lat')
+thin_occs <- occs_thinner(occs_list = occs_list, envs = envs, long = 'long', lat = 'lat', spp_list = spp_list)
 }
