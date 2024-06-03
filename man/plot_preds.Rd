@@ -4,7 +4,7 @@
 \alias{plot_preds}
 \title{Plot model prediction outputs}
 \usage{
-plot_preds(preds, poly, ncol = NULL, nrow = NULL, colors)
+plot_preds(preds, poly, ncol = NULL, nrow = NULL, colors, high, low)
 }
 \arguments{
 \item{preds}{RasterStack object of model prediction outputs}
@@ -16,6 +16,10 @@ plot_preds(preds, poly, ncol = NULL, nrow = NULL, colors)
 \item{nrow}{(optional) the number of rows to use in the plotting pane}
 
 \item{colors}{A color palette to use for plotting}
+
+\item{high}{Numeric. A higher-end value of estimated suitability}
+
+\item{low}{Numeric. A lower-end value of estimated suitability}
 }
 \value{
 A ggplot2-style plot of model prediction outputs

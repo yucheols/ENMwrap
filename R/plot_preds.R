@@ -5,12 +5,14 @@
 #' @param ncol (optional) the number of columns to use in the plotting pane
 #' @param nrow (optional) the number of rows to use in the plotting pane
 #' @param colors A color palette to use for plotting
+#' @param high Numeric. A higher-end value of estimated suitability
+#' @param low Numeric. A lower-end value of estimated suitability
 #'
 #' @returns A ggplot2-style plot of model prediction outputs
 #' @examples
 #' plot_current <- plot_preds(preds = preds, poly = poly, ncol = 2, nrow = 3, colors = c('#2b83ba', '#abdda4', '#ffffbf', '#fdae61', '#4f05d7'))
 
-plot_preds <- function(preds, poly, ncol = NULL, nrow = NULL, colors) {
+plot_preds <- function(preds, poly, ncol = NULL, nrow = NULL, colors, high, low) {
   require(rasterVis)
   require(ggplot2)
 
@@ -21,8 +23,8 @@ plot_preds <- function(preds, poly, ncol = NULL, nrow = NULL, colors) {
     scale_fill_gradientn(colors =  colors,
                          na.value = NA,
                          name = 'Suitability',
-                         breaks = c(0.2, 0.8),
-                         labels = c('Low: 0.2', 'High: 0.8')) +
+                         breaks = c(low, high),
+                         labels = c(paste0('Low: ', low), paste0('High: ', high))) +
     xlab('Longitude (°)') + ylab('Latitude (°)') +
     geom_polygon(data = poly, aes(x = long, y = lat, group = group), color = 'black', linewidth = 0.5, linetype = 'solid', fill = NA) +
     theme_bw() +
