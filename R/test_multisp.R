@@ -41,8 +41,8 @@ test_multisp <- function(taxon.list, occs.list, envs, bg, tune.args, partitions,
         dplyr::filter(auc.val.avg == max(auc.val.avg))
 
       output[[i]] <- opt.param
+      output[[i]]$species <- taxon.list[[i]]
       metrics <- dplyr::bind_rows(output)
-      metrics$species <- taxon.list
 
       # get optimal model per iteration
       opt.model <- ENMeval::eval.models(eval)[[opt.param$tune.args]]
@@ -77,8 +77,8 @@ test_multisp <- function(taxon.list, occs.list, envs, bg, tune.args, partitions,
         dplyr::filter(auc.val.avg == max(auc.val.avg))
 
       output[[i]] <- opt.param
+      output[[i]]$species <- taxon.list[[i]]
       metrics <- dplyr::bind_rows(output)
-      metrics$species <- taxon.list
 
       # get optimal model per iteration
       opt.model <- ENMeval::eval.models(eval)[[opt.param$tune.args]]
