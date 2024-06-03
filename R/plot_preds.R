@@ -10,7 +10,7 @@
 #'
 #' @returns A ggplot2-style plot of model prediction outputs
 #' @examples
-#' plot_current <- plot_preds(preds = preds, poly = poly, ncol = 2, nrow = 3, colors = c('#2b83ba', '#abdda4', '#ffffbf', '#fdae61', '#4f05d7'))
+#' plot_current <- plot_preds(preds = preds, poly = poly, ncol = 2, nrow = 3, colors = c('#2b83ba', '#abdda4', '#ffffbf', '#fdae61', '#4f05d7'), high = 0.9, low = 0.1)
 
 plot_preds <- function(preds, poly, ncol = NULL, nrow = NULL, colors, high, low) {
   require(rasterVis)
