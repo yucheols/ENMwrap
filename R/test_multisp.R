@@ -47,7 +47,6 @@ test_multisp <- function(taxon.list, occs.list, envs, bg, tune.args, partitions,
       # get optimal model per iteration
       opt.model <- ENMeval::eval.models(eval)[[opt.param$tune.args]]
       models[[i]] <- opt.model
-      models$species[[i]] <- taxon.list[[i]]
 
       # get variable importance for each best model
       var.imp <- ENMeval::eval.variable.importance(eval)[[opt.param$tune.args]]
@@ -83,7 +82,6 @@ test_multisp <- function(taxon.list, occs.list, envs, bg, tune.args, partitions,
       # get optimal model per iteration
       opt.model <- ENMeval::eval.models(eval)[[opt.param$tune.args]]
       models[[i]] <- opt.model
-      models$species[[i]] <- taxon.list[[i]]
 
       # get variable importance for each best model
       var.imp <- ENMeval::eval.variable.importance(eval)[[opt.param$tune.args]]
@@ -96,5 +94,5 @@ test_multisp <- function(taxon.list, occs.list, envs, bg, tune.args, partitions,
 
     }
   }
-  return(list(metrics = metrics, models = models, preds = preds.stack, contrib = contrib))
+  return(list(metrics = metrics, models = models, preds = preds.stack, contrib = contrib, taxon.list = taxon.list))
 }
