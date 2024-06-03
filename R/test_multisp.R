@@ -42,6 +42,12 @@ test_multisp <- function(taxon.list, occs.list, envs, bg, tune.args, partitions,
 
       output[[i]] <- opt.param
       metrics <- dplyr::bind_rows(output)
+      metrics$species <- taxon.list
+
+      # get optimal model per iteration
+      opt.model <- ENMeval::eval.models(eval)[[opt.param$tune.args]]
+      models[[i]] <- opt.model
+      models$species <- taxon.list
 
       # get variable importance for each best model
       var.imp <- ENMeval::eval.variable.importance(eval)[[opt.param$tune.args]]
@@ -72,10 +78,12 @@ test_multisp <- function(taxon.list, occs.list, envs, bg, tune.args, partitions,
 
       output[[i]] <- opt.param
       metrics <- dplyr::bind_rows(output)
+      metrics$species <- taxon.list
 
       # get optimal model per iteration
       opt.model <- ENMeval::eval.models(eval)[[opt.param$tune.args]]
       models[[i]] <- opt.model
+      models$species <- taxon.list
 
       # get variable importance for each best model
       var.imp <- ENMeval::eval.variable.importance(eval)[[opt.param$tune.args]]
