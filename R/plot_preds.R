@@ -12,9 +12,12 @@
 #' @examples
 #' plot_current <- plot_preds(preds = preds, poly = poly, ncol = 2, nrow = 3, colors = c('#2b83ba', '#abdda4', '#ffffbf', '#fdae61', '#4f05d7'), high = 0.9, low = 0.1)
 
-plot_preds <- function(preds, poly, ncol = NULL, nrow = NULL, colors = c('#2b83ba', '#abdda4', '#ffffbf', '#fdae61', '#4f05d7'), high = 0.9, low = 0.1) {
+plot_preds <- function(preds, poly, ncol = NULL, nrow = NULL, colors = c('#2b83ba', '#abdda4', '#ffffbf', '#fdae61', '#4f05d7'),
+                       high = 0.9, low = 0.1, pred.names) {
   require(rasterVis)
   require(ggplot2)
+
+  names(preds) = pred.names
 
   gplot(preds) +
     geom_tile(aes(fill = value)) +
@@ -25,7 +28,7 @@ plot_preds <- function(preds, poly, ncol = NULL, nrow = NULL, colors = c('#2b83b
                          name = 'Suitability',
                          breaks = c(low, high),
                          labels = c(paste0('Low: ', low), paste0('High: ', high))) +
-    xlab('Longitude (°)') + ylab('Latitude (°)') +
+    xlab('Longitude') + ylab('Latitude') +
     geom_polygon(data = poly, aes(x = long, y = lat, group = group), color = 'black', linewidth = 0.5, linetype = 'solid', fill = NA) +
     theme_bw() +
     theme(strip.text = element_text(size = 14),
