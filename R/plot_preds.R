@@ -7,10 +7,11 @@
 #' @param colors A color palette to use for plotting
 #' @param high Numeric. A higher-end value of estimated suitability. 0.9 by default
 #' @param low Numeric. A lower-end value of estimated suitability. 0.1 by default
+#' @param pred.names A vector of names to attach to model predictions for plotting
 #'
 #' @returns A ggplot2-style plot of model prediction outputs
 #' @examples
-#' plot_current <- plot_preds(preds = preds, poly = poly, ncol = 2, nrow = 3, colors = c('#2b83ba', '#abdda4', '#ffffbf', '#fdae61', '#4f05d7'), high = 0.9, low = 0.1)
+#' plot_current <- plot_preds(preds = preds, poly = poly, ncol = 2, nrow = 3, colors = c('#2b83ba', '#abdda4', '#ffffbf', '#fdae61', '#4f05d7'), high = 0.9, low = 0.1, pred.names = pred.names)
 
 plot_preds <- function(preds, poly, ncol = NULL, nrow = NULL, colors = c('#2b83ba', '#abdda4', '#ffffbf', '#fdae61', '#4f05d7'),
                        high = 0.9, low = 0.1, pred.names) {
@@ -31,7 +32,7 @@ plot_preds <- function(preds, poly, ncol = NULL, nrow = NULL, colors = c('#2b83b
     xlab('Longitude') + ylab('Latitude') +
     geom_polygon(data = poly, aes(x = long, y = lat, group = group), color = 'black', linewidth = 0.5, linetype = 'solid', fill = NA) +
     theme_bw() +
-    theme(strip.text = element_text(size = 14),
+    theme(strip.text = element_text(size = 14, face = 'italic'),
           legend.title = element_text(size = 14, face = 'bold', margin = margin(b = 10)),
           legend.text = element_text(size = 12),
           axis.title = element_text(size = 14, face = 'bold'),

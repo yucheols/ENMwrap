@@ -11,7 +11,8 @@ plot_preds(
   nrow = NULL,
   colors = c("#2b83ba", "#abdda4", "#ffffbf", "#fdae61", "#4f05d7"),
   high = 0.9,
-  low = 0.1
+  low = 0.1,
+  pred.names
 )
 }
 \arguments{
@@ -28,6 +29,8 @@ plot_preds(
 \item{high}{Numeric. A higher-end value of estimated suitability. 0.9 by default}
 
 \item{low}{Numeric. A lower-end value of estimated suitability. 0.1 by default}
+
+\item{pred.names}{A vector of names to attach to model predictions for plotting}
 }
 \value{
 A ggplot2-style plot of model prediction outputs
@@ -36,5 +39,5 @@ A ggplot2-style plot of model prediction outputs
 Plot model prediction outputs
 }
 \examples{
-plot_current <- plot_preds(preds = preds, poly = poly, ncol = 2, nrow = 3, colors = c('#2b83ba', '#abdda4', '#ffffbf', '#fdae61', '#4f05d7'), high = 0.9, low = 0.1)
+plot_current <- plot_preds(preds = preds, poly = poly, ncol = 2, nrow = 3, colors = c('#2b83ba', '#abdda4', '#ffffbf', '#fdae61', '#4f05d7'), high = 0.9, low = 0.1, pred.names = pred.names)
 }
