@@ -18,25 +18,30 @@ plot_preds <- function(preds, poly, ncol = NULL, nrow = NULL, colors = c('#2b83b
   require(rasterVis)
   require(ggplot2)
 
+  print('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=   plotting model predictions   =-=-=-=-=-=-=-=-=-=-=-=-=-=-=')
+
   names(preds) = pred.names
 
-  gplot(preds) +
-    geom_tile(aes(fill = value)) +
-    coord_equal() +
-    facet_wrap(~ variable, ncol = ncol, nrow = nrow) +
-    scale_fill_gradientn(colors =  colors,
-                         na.value = NA,
-                         name = 'Suitability',
-                         breaks = c(low, high),
-                         labels = c(paste0('Low: ', low), paste0('High: ', high))) +
-    xlab('Longitude') + ylab('Latitude') +
-    geom_polygon(data = poly, aes(x = long, y = lat, group = group), color = 'black', linewidth = 0.5, linetype = 'solid', fill = NA) +
-    theme_bw() +
-    theme(strip.text = element_text(size = 14, face = 'italic'),
-          legend.title = element_text(size = 14, face = 'bold', margin = margin(b = 10)),
-          legend.text = element_text(size = 12),
-          axis.title = element_text(size = 14, face = 'bold'),
-          axis.title.x = element_text(margin = margin(t = 15)),
-          axis.title.y = element_text(margin = margin(r = 15)),
-          axis.text = element_text(size = 12))
+   plot.out <- gplot(preds) +
+     geom_tile(aes(fill = value)) +
+     coord_equal() +
+     facet_wrap(~ variable, ncol = ncol, nrow = nrow) +
+     scale_fill_gradientn(colors =  colors,
+                          na.value = NA,
+                          name = 'Suitability',
+                          breaks = c(low, high),
+                          labels = c(paste0('Low: ', low), paste0('High: ', high))) +
+     xlab('Longitude') + ylab('Latitude') +
+     geom_polygon(data = poly, aes(x = long, y = lat, group = group), color = 'black', linewidth = 0.5, linetype = 'solid', fill = NA) +
+     theme_bw() +
+     theme(strip.text = element_text(size = 14, face = 'italic'),
+           legend.title = element_text(size = 14, face = 'bold', margin = margin(b = 10)),
+           legend.text = element_text(size = 12),
+           axis.title = element_text(size = 14, face = 'bold'),
+           axis.title.x = element_text(margin = margin(t = 15)),
+           axis.title.y = element_text(margin = margin(r = 15)),
+           axis.text = element_text(size = 12))
+
+   return(plot.out)
+   print(print('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=   DONE   =-=-=-=-=-=-=-=-=-=-=-=-=-=-='))
 }
