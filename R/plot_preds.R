@@ -42,6 +42,6 @@ plot_preds <- function(preds, poly, ncol = NULL, nrow = NULL, colors = c('#2b83b
            axis.title.y = element_text(margin = margin(r = 15)),
            axis.text = element_text(size = 12))
 
+   print('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=   DONE   =-=-=-=-=-=-=-=-=-=-=-=-=-=-=')
    return(plot.out)
-   print(print('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=   DONE   =-=-=-=-=-=-=-=-=-=-=-=-=-=-='))
 }
