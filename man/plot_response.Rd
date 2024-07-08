@@ -33,5 +33,5 @@ A ggplot2-style facetted plot of the MaxEnt response curves
 Plot MaxEnt response curves
 }
 \examples{
-resp.plot <- plot_response(resp.data = resp.data, ncol = 2, nrow = 3, color = 'cornflowerblue', fill = 'grey', linewidth = 1.2, alpha = 0.4)
+resp.plot <- plot_response(resp.data = resp.data, ncol = 2, nrow = 3, color = 'cornflowerblue', linewidth = 1.2, alpha = 0.4)
 }
