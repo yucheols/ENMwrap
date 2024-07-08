@@ -9,7 +9,6 @@ plot_response(
   ncol = NULL,
   nrow = NULL,
   color = "cornflowerblue",
-  fill = "grey",
   linewidth = 1.2,
   alpha = 0.4
 )
@@ -22,8 +21,6 @@ plot_response(
 \item{nrow}{The number of rows to use for ggplot2 facetting. Default is NULL}
 
 \item{color}{Color palette to use for response curves}
-
-\item{fill}{Color fill to represent the variance between replicate models}
 
 \item{linewidth}{Line width for response curves. Default is 1.2}
 
