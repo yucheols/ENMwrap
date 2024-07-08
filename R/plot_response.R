@@ -20,7 +20,7 @@ plot_response <- function(resp.data, ncol = NULL, nrow = NULL, color = 'cornflow
     geom_line(color = color, linewidth = linewidth) +
     geom_ribbon(aes(ymin = ymin, ymax = ymax), fill = fill, alpha = alpha) +
     xlab('Variable') + ylab('Suitability') +
-    theme_light()
+    theme_bw()
 
   return(resp.data.out)
 }
