@@ -39,11 +39,11 @@ resp.plot <- plot_response(resp.data = resp.data, ncol = 2, nrow = 3, color = 'c
 # Further customization
 resp.plot <- plot_response(resp.data = resp.data, ncol = 2, nrow = 3, color = 'cornflowerblue', linewidth = 1.2, alpha = 0.4) +
 theme(axis.title = element_text(size = 14, face = 'bold'),
-axis.title.x = element_text(margin = margin(t = 20)),
-axis.title.y = element_text(margin = margin(r = 20)),
-axis.text = element_text(size = 12),
-strip.text = element_text(size = 12),
-legend.title = element_text(size = 14, face = 'bold'),
-legend.text = element_text(size = 14, face = 'italic'),
-legend.position = 'top')
+      axis.title.x = element_text(margin = margin(t = 20)),
+      axis.title.y = element_text(margin = margin(r = 20)),
+      axis.text = element_text(size = 12),
+      strip.text = element_text(size = 12),
+      legend.title = element_text(size = 14, face = 'bold'),
+      legend.text = element_text(size = 14, face = 'italic'),
+      legend.position = 'top')
 }
