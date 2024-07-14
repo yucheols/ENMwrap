@@ -12,18 +12,15 @@ calc_ranges <- function(bin.stack, bin.labs, digits) {
 
   output <- list()
 
-
   for (i in 1:nlayers(bin.stack)) {
     # read raster
     r <- bin.stack[[i]]
-    r <- terra::project(terra::rast(amp.bins), 'ESRI:54012') %>% raster::raster()
 
     # range calc
     r[r < 1] <- NA
     r <- raster::area(r, na.rm = T, weights = F)
     r <- r[!is.na(r)]
     r_ext <- length(r) * median(r)
-    r_ext <- r_ext / 1000000
     output[[i]] <- paste(bin.labs[[i]], round(r_ext, digits = digits), 'km2')
   }
   return(output)
