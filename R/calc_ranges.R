@@ -23,7 +23,7 @@ calc_ranges <- function(bin.stack, bin.labs, digits) {
     r <- raster::area(r, na.rm = T, weights = F)
     r <- r[!is.na(r)]
     r_ext <- length(r) * median(r)
-    r_ext <- r_ext/1000000
+    r_ext <- r_ext / 1000000
     output[[i]] <- paste(bin.labs[[i]], round(r_ext, digits = digits), 'km2')
   }
   return(output)
