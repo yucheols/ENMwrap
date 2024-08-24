@@ -7,14 +7,22 @@
 #' @examples
 #' pred.enms <- model_predictr(model = mx_model, preds.list = list(lgm, mh, current), preds.names = c('LGM', 'Mid-Holocene', 'Current'))
 
-model_predictr <- function(model, preds.list, preds.names) {
+model_predictr <- function(model, preds.list, preds.names, method) {
   require(dismo)
 
   output <- list()
 
-  for (i in 1:length(preds.list)) {
-    make.pred <- dismo::predict(object = model, x = preds.list[[i]], progress = 'text')
-    output[[i]] <- make.pred
+  if(method = 'single2multi') {
+    for (i in 1:length(preds.list)) {
+      make.pred <- dismo::predict(object = model, x = preds.list[[i]], progress = 'text')
+      output[[i]] <- make.pred
+    }
+  }
+  else if(method = 'multi2single') {
+    for (i in 1:length(preds.list)) {
+      make.pred <- dismo::predict(object = model[[i]], x = preds.list, progress = 'text')
+      output[[i]] <- make.pred
+    }
   }
   output.pred <- raster::stack(output)
   names(output.pred) = pred.names
