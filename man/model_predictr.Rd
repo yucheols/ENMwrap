@@ -4,14 +4,14 @@
 \alias{model_predictr}
 \title{Predict ecological niche models to multiple datasets}
 \usage{
-model_predictr(model, preds.list, preds.names, method)
+model_predictr(model, preds.list, pred.names, method)
 }
 \arguments{
 \item{model}{A fitted ENM of the class MaxEnt. Can be extracted by accessing the "models" slot output from "test_multibg" or "test_multisp"}
 
 \item{preds.list}{A list containing RasterStack objects of projection datasets. If "method = multi2single", input RasterStack object}
 
-\item{preds.names}{A vector of names corresponding to each dataset in "preds.list". Can be the name of a particular time period (e.g. LGM) or climate change scenario (e.g. SSP26)}
+\item{pred.names}{A vector of names corresponding to each dataset in "preds.list". Can be the name of a particular time period (e.g. LGM) or climate change scenario (e.g. SSP26)}
 
 \item{method}{Specify the type of model prediction. If "single2multi", conduct model predictions to multiple past/future environment from a single model. If "multi2single", make predictions to a single past/future dataset from multiple current models}
 }
