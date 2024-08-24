@@ -7,7 +7,7 @@
 model_predictr(model, preds.list, pred.names, method)
 }
 \arguments{
-\item{model}{A fitted ENM of the class MaxEnt. Can be extracted by accessing the "models" slot output from "test_multibg" or "test_multisp"}
+\item{model}{A fitted ENM of the class MaxEnt. Can be extracted by accessing the "models" slot output from "test_multibg" or "test_multisp". If "method = multi2single", this object will be of the class "list"}
 
 \item{preds.list}{A list containing RasterStack objects of projection datasets. If "method = multi2single", input RasterStack object}
 

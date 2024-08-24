@@ -1,6 +1,6 @@
 #' Predict ecological niche models to multiple datasets
 #'
-#' @param model A fitted ENM of the class MaxEnt. Can be extracted by accessing the "models" slot output from "test_multibg" or "test_multisp"
+#' @param model A fitted ENM of the class MaxEnt. Can be extracted by accessing the "models" slot output from "test_multibg" or "test_multisp". If "method = multi2single", this object will be of the class "list"
 #' @param preds.list A list containing RasterStack objects of projection datasets. If "method = multi2single", input RasterStack object
 #' @param pred.names A vector of names corresponding to each dataset in "preds.list". Can be the name of a particular time period (e.g. LGM) or climate change scenario (e.g. SSP26)
 #' @param method Specify the type of model prediction. If "single2multi", conduct model predictions to multiple past/future environment from a single model. If "multi2single", make predictions to a single past/future dataset from multiple current models
@@ -21,7 +21,7 @@ model_predictr <- function(model, preds.list, pred.names, method) {
     }
   }
   else if(method == 'multi2single') {
-    for (i in 1:nlayers(preds.list)) {
+    for (i in 1:length(model)) {
       make.pred <- dismo::predict(object = model[[i]], x = preds.list, progress = 'text')
       output[[i]] <- make.pred
     }
