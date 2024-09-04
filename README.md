@@ -11,7 +11,7 @@ devtools::install_github('yucheols/ENMwrap')
 ## Software and package dependencies
 
 *The package will be updated soon to remove raster and rgdal dependencies* 
-- R (version 4.2.2 or above)
+- R (version 4.2.2 or higher)
 - ENMeval (version 2.0.4)
 - dismo (version 1.3.14)
 - SDMtune (version 1.3.1)
