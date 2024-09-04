@@ -7,3 +7,9 @@ install.packages('devtools')
 
 devtools::install_github('yucheols/ENMwrap')
 ```
+
+## Software and package dependencies
+
+_*The package will be updated soon to remove raster dependency*_ 
+- R (version 4.2.2 or above)
+- 
