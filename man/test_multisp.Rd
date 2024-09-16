@@ -46,5 +46,6 @@ MaxEnt model tuning for multiple species
 # using the same bg dataset for all species
 test_sp1 <- test_multisp(taxon.list = c('sp1', 'sp2', 'sp3'), occs.list = list(occs1, occs2, occs3), envs = envs, bg = list(rep(bg, 3)), tune.args = tune.args, partitions = 'randomkfold', partition.settings = list(kfolds = 10), type = 'type1')
 
+# using different bg dataset for each species
 test_sp2 <- test_multisp(taxon.list = c('sp1', 'sp2', 'sp3'), occs.list = list(occs1, occs2, occs3), envs = envs, bg = list(bg1, bg2, bg3), tune.args = tune.args, partitions = 'randomkfold', partition.settings = list(kfolds = 10), type = 'type1')
 }
