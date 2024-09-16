@@ -23,7 +23,7 @@ test_multisp(
 
 \item{envs}{RasterStack of environmental data}
 
-\item{bg}{A data.frame of background points. This should have two columns with the column names matching the occurrence dataset.}
+\item{bg}{A list containing data.frame of background points. Each data.frame in the list should have two columns with the column names matching the occurrence dataset. If using the same background dataset for all species, repeat the data.frame so that the list matches the length of occs.list (e.g. you can use bg = list(rep(bg, legnth(occs.list)))). Alternatively, you can use different background dataset for each species.}
 
 \item{tune.args}{A named list containing feature class settings ("fc") and regularization values ("rm"). Use ?ENMevaluate for details}
 
@@ -43,5 +43,7 @@ A named list with slots for model metrics of selected models, model objects, mod
 MaxEnt model tuning for multiple species
 }
 \examples{
-test_sp <- test_multisp(taxon.list = c('sp1', 'sp2', 'sp3'), occs.list = list(occs1, occs2, occs3), envs = envs, bg = bg, tune.args = tune.args, partitions = 'randomkfold', partition.settings = list(kfolds = 10), type = 'type1')
+# using the same bg dataset for all species
+test_sp1 <- test_multisp(taxon.list = c('sp1', 'sp2', 'sp3'), occs.list = list(occs1, occs2, occs3), envs = envs, bg = list(rep(bg, 3)), tune.args = tune.args, partitions = 'randomkfold', partition.settings = list(kfolds = 10), type = 'type1')
+test_sp2 <- test_multisp(taxon.list = c('sp1', 'sp2', 'sp3'), occs.list = list(occs1, occs2, occs3), envs = envs, bg = list(bg1, bg2, bg3), tune.args = tune.args, partitions = 'randomkfold', partition.settings = list(kfolds = 10), type = 'type1')
 }

@@ -3,7 +3,7 @@
 #' @param taxon.list A vector of species names to run model tuning
 #' @param occs.list A list containing occurrence points for each species. The occurrence dataset for each species should be a data.frame object with two columns, in the order of longitude and latitude
 #' @param envs RasterStack of environmental data
-#' @param bg A data.frame of background points. This should have two columns with the column names matching the occurrence dataset.
+#' @param bg A list containing data.frame of background points. Each data.frame in the list should have two columns with the column names matching the occurrence dataset. If using the same background dataset for all species, repeat the data.frame so that the list matches the length of occs.list (e.g. you can use bg = list(rep(bg, legnth(occs.list)))). Alternatively, you can use different background dataset for each species.
 #' @param tune.args A named list containing feature class settings ("fc") and regularization values ("rm"). Use ?ENMevaluate for details
 #' @param partitions Character. The name of data partitioning strategy to use for model evaluations. Can select from: "randomkfold", "block", "checkerboard1", "checkerboard2", "testing", and "user"
 #' @param partition.settings A named list used to specify settings for the selected partitioning scheme
@@ -12,7 +12,10 @@
 #' If "type2" is used, the primary, secondary, and tertiary criteria for model selection would be delta.AICc smaller than 2, minimum 10 percent omission rate, and maximum validation AUC, respectively
 #' @returns A named list with slots for model metrics of selected models, model objects, model predictions, and variable importance
 #' @examples
-#' test_sp <- test_multisp(taxon.list = c('sp1', 'sp2', 'sp3'), occs.list = list(occs1, occs2, occs3), envs = envs, bg = bg, tune.args = tune.args, partitions = 'randomkfold', partition.settings = list(kfolds = 10), type = 'type1')
+#' # using the same bg dataset for all species
+#' test_sp1 <- test_multisp(taxon.list = c('sp1', 'sp2', 'sp3'), occs.list = list(occs1, occs2, occs3), envs = envs, bg = list(rep(bg, 3)), tune.args = tune.args, partitions = 'randomkfold', partition.settings = list(kfolds = 10), type = 'type1')
+#  # using different bg dataset for each species
+#' test_sp2 <- test_multisp(taxon.list = c('sp1', 'sp2', 'sp3'), occs.list = list(occs1, occs2, occs3), envs = envs, bg = list(bg1, bg2, bg3), tune.args = tune.args, partitions = 'randomkfold', partition.settings = list(kfolds = 10), type = 'type1')
 
 test_multisp <- function(taxon.list, occs.list, envs, bg, tune.args, partitions, partition.settings = NULL, user.grp = NULL, type) {
   require(dplyr)
@@ -28,7 +31,7 @@ test_multisp <- function(taxon.list, occs.list, envs, bg, tune.args, partitions,
     for (i in 1:length(occs.list)) {
 
       # make models
-      eval <- ENMeval::ENMevaluate(taxon.name = taxon.list[[i]], occs = occs.list[[i]], envs = envs, bg = bg, tune.args = tune.args,
+      eval <- ENMeval::ENMevaluate(taxon.name = taxon.list[[i]], occs = occs.list[[i]], envs = envs, bg = bg[[i]], tune.args = tune.args,
                                    partitions = partitions, partition.settings = partition.settings, user.grp = user.grp[[i]], doClamp = T,
                                    algorithm = 'maxent.jar', parallel = T, parallelType = 'doSNOW')
 
@@ -63,7 +66,7 @@ test_multisp <- function(taxon.list, occs.list, envs, bg, tune.args, partitions,
     for (i in 1:length(occs.list)) {
 
       # make models
-      eval <- ENMeval::ENMevaluate(taxon.name = taxon.list[[i]], occs = occs.list[[i]], envs = envs, bg = bg, tune.args = tune.args,
+      eval <- ENMeval::ENMevaluate(taxon.name = taxon.list[[i]], occs = occs.list[[i]], envs = envs, bg = bg[[i]], tune.args = tune.args,
                                    partitions = partitions, partition.settings = partition.settings, user.grp = user.grp[[i]], doClamp = T,
                                    algorithm = 'maxent.jar', parallel = T, parallelType = 'doSNOW')
 
