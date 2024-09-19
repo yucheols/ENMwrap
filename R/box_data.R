@@ -4,9 +4,9 @@
 #' @param pts A data.frame of species occurrence points having two columns, in the order of "long" and "lat"
 #' @returns A data.frame of formatted for use in ggplot2
 #' @examples
-#' get.box.data <- boxdata(sp.name = 'Karsenia koreana', envs = envs, pts = occs)
+#' get.box.data <- box_data(sp.name = 'Karsenia koreana', envs = envs, pts = occs)
 
-boxdata <- function(sp.name, envs, pts) {
+box_data <- function(sp.name, envs, pts) {
   require(dplyr)
 
   output <- list()

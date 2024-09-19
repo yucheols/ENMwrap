@@ -11,9 +11,9 @@
 #' from the provided bias grid. The method is "random" by default
 #' @returns A list containing sampled background points
 #' @examples
-#' bg <- bgSampler(envs = envs, n = 10000, occs_list = occs_list, method = 'random')
+#' bg <- bg_sampler(envs = envs, n = 10000, occs_list = occs_list, method = 'random')
 
-bgSampler <- function(envs, n, occs_list, buffer_list = NULL, bias.grid = NULL, excludep = NULL, method = 'random') {
+bg_sampler <- function(envs, n, occs_list, buffer_list = NULL, bias.grid = NULL, excludep = NULL, method = 'random') {
   bg.out <- list()
 
   if (method == 'random') {

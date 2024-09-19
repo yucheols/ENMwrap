@@ -5,9 +5,9 @@
 #' @param buff_dist A numeric value given in meters. Circular dissolved buffers will be created based on this value
 #' @returns A list of spatial buffers, with the order of species corresponding to the input species occurrence points
 #' @examples
-#' get.buff <- buffMaker(occs_list = occs_list, envs = envs, buff_dist = 700000)
+#' get.buff <- buff_maker(occs_list = occs_list, envs = envs, buff_dist = 700000)
 
-buffMaker <- function(occs_list, envs, buff_dist) {
+buff_maker <- function(occs_list, envs, buff_dist) {
   require(sf, quietly = T)
 
   output <- list()
