@@ -8,7 +8,7 @@
 #' resp.data <- respDataPull(sp.name = 'Karsenia koreana', model = mx_model, var = c('bio1', 'bio12', 'slope'))
 
 
-respDataPull <- function(sp.name, model, names.var) {
+resp_data_pull <- function(sp.name, model, names.var) {
   require(dplyr)
 
   resp.data <- list()

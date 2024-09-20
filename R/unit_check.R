@@ -7,7 +7,7 @@
 #' @examples
 #' a <- unitCheck(ref.env = ref.stack, proj.env = proj.stack, n = 10000)
 
-unitCheck <- function(ref.env, proj.env, n) {
+unit_check <- function(ref.env, proj.env, n) {
   require(dplyr)
   require(dismo)
 

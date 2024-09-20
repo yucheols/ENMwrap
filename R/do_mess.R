@@ -8,7 +8,7 @@
 #' @examples
 #' get.mess <- do.mess(proj.env = proj.stack, proj.names = c('LGM', 'Current', '2050'), ref.env = ref.stack, occs = occs)
 
-do.mess <- function(proj.env, proj.names, ref.env, occs) {
+do_mess <- function(proj.env, proj.names, ref.env, occs) {
   require(dplyr)
   require(raster)
   require(dismo)
