@@ -34,7 +34,7 @@ bg_sampler <- function(envs, n, occs_list, buffer_list = NULL, bias.grid = NULL,
     }
   }
   else if (method == 'bias.grid') {
-    bg <- raster::xyFromCell(bias.grid, sample(which(!is.na(values(subset(envs, 1)))), n = n, prob = values(bias.grid)[!is.na(values(subset(envs, 1)))])) %>% as.data.frame()
+    bg <- raster::xyFromCell(bias.grid, sample(which(!is.na(values(subset(envs, 1)))), size = n, prob = values(bias.grid)[!is.na(values(subset(envs, 1)))])) %>% as.data.frame()
     colnames(bg) = c('long', 'lat')
     bg.out <- bg
   }
