@@ -2,7 +2,7 @@
 #'
 #' @param envs RasterLayer of environmetal variable from which to draw background points
 #' @param n Numerical value for the desired number of background points to sample
-#' @param occs_list A list containing occurrence datasets. Each occurrence set needs to have two columns named "long" and "lat", and in that order
+#' @param occs_list A list containing occurrence datasets. Each occurrence set needs to have two columns named "long" and "lat", and in that order. Required for the methods "random" and "buffer"
 #' @param buffer_list A list of spatial buffers. Only needed when "method = 'buffer'"is used
 #' @param bias.grid RasterLayer of bias grid to correct for spatial sampling bias. Only needed when "method = 'bias.grid'" is used
 #' @param excludep Logical. Decides whether or not to exclude occurrence points from background sampling. Only used for "random" and "buffer" methods
@@ -13,7 +13,7 @@
 #' @examples
 #' bg <- bg_sampler(envs = envs, n = 10000, occs_list = occs_list, method = 'random')
 
-bg_sampler <- function(envs, n, occs_list, buffer_list = NULL, bias.grid = NULL, excludep = NULL, method = 'random') {
+bg_sampler <- function(envs, n, occs_list = NULL, buffer_list = NULL, bias.grid = NULL, excludep = NULL, method = 'random') {
   bg.out <- list()
 
   if (method == 'random') {

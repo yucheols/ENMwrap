@@ -7,7 +7,7 @@
 bg_sampler(
   envs,
   n,
-  occs_list,
+  occs_list = NULL,
   buffer_list = NULL,
   bias.grid = NULL,
   excludep = NULL,
@@ -19,7 +19,7 @@ bg_sampler(
 
 \item{n}{Numerical value for the desired number of background points to sample}
 
-\item{occs_list}{A list containing occurrence datasets. Each occurrence set needs to have two columns named "long" and "lat", and in that order}
+\item{occs_list}{A list containing occurrence datasets. Each occurrence set needs to have two columns named "long" and "lat", and in that order. Required for the methods "random" and "buffer"}
 
 \item{buffer_list}{A list of spatial buffers. Only needed when "method = 'buffer'"is used}
 
