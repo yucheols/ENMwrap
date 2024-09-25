@@ -10,7 +10,7 @@ bg_sampler(
   occs_list = NULL,
   buffer_list = NULL,
   bias.grid = NULL,
-  excludep = NULL,
+  excludep = T,
   method = "random"
 )
 }
@@ -25,7 +25,7 @@ bg_sampler(
 
 \item{bias.grid}{RasterLayer of bias grid to correct for spatial sampling bias. Only needed when "method = 'bias.grid'" is used}
 
-\item{excludep}{Logical. Decides whether or not to exclude occurrence points from background sampling. Only used for "random" and "buffer" methods}
+\item{excludep}{Logical. Decides whether or not to exclude occurrence points from background sampling. Only used for "random" and "buffer" methods. By default, excludep = TRUE}
 
 \item{method}{Character. Method to use for background sampling. If "random" is used, the background points are sampled randomly from the provided raster layer.
 If "buffer" is used, the background points are sampled from within the boundary of provided buffer(s). If "bias.grid" is used, sample bias-corrected background points
