@@ -26,8 +26,8 @@ bg_sampler <- function(envs, n, occs_list = NULL, buffer_list = NULL, bias.grid 
   }
   else if (method == 'buffer') {
     for (i in 1:length(buffer_list)) {
-      mask <- raster::mask(envs, buffer_list[[i]])
-      bg <- dismo::randomPoints(mask = envs, n = n, p = occs_list[[i]], excludep = excludep) %>% as.data.frame()
+      mask.envs <- raster::mask(envs, buffer_list[[i]])
+      bg <- dismo::randomPoints(mask = mask.envs, n = n, p = occs_list[[i]], excludep = excludep) %>% as.data.frame()
       colnames(bg) = c('long', 'lat')
 
       bg.out[[i]] <- bg
