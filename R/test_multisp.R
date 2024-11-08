@@ -3,7 +3,7 @@
 #' @param taxon.list A vector of species names to run model tuning
 #' @param occs.list A list containing occurrence points for each species. The occurrence dataset for each species should be a data.frame object with two columns, in the order of longitude and latitude
 #' @param envs RasterStack of environmental data
-#' @param bg A list containing data.frame of background points. Each data.frame in the list should have two columns with the column names matching the occurrence dataset. If using the same background dataset for all species, repeat the data.frame so that the list matches the length of occs.list (e.g. you can use bg = list(rep(bg, legnth(occs.list)))). Alternatively, you can use different background dataset for each species.
+#' @param bg A list containing data.frame of background points. Each data.frame in the list should have two columns with the column names matching the occurrence dataset. If using the same background dataset for all species, repeat the data.frame so that the list matches the length of occs.list (e.g. you can use bg = rep(list(bg), length(occs.list))). Alternatively, you can use different background dataset for each species.
 #' @param tune.args A named list containing feature class settings ("fc") and regularization values ("rm"). Use ?ENMevaluate for details
 #' @param partitions Character. The name of data partitioning strategy to use for model evaluations. Can select from: "randomkfold", "block", "checkerboard1", "checkerboard2", "testing", and "user"
 #' @param partition.settings A named list used to specify settings for the selected partitioning scheme

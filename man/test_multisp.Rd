@@ -23,7 +23,7 @@ test_multisp(
 
 \item{envs}{RasterStack of environmental data}
 
-\item{bg}{A list containing data.frame of background points. Each data.frame in the list should have two columns with the column names matching the occurrence dataset. If using the same background dataset for all species, repeat the data.frame so that the list matches the length of occs.list (e.g. you can use bg = list(rep(bg, legnth(occs.list)))). Alternatively, you can use different background dataset for each species.}
+\item{bg}{A list containing data.frame of background points. Each data.frame in the list should have two columns with the column names matching the occurrence dataset. If using the same background dataset for all species, repeat the data.frame so that the list matches the length of occs.list (e.g. you can use bg = rep(list(bg), length(occs.list))). Alternatively, you can use different background dataset for each species.}
 
 \item{tune.args}{A named list containing feature class settings ("fc") and regularization values ("rm"). Use ?ENMevaluate for details}
 
