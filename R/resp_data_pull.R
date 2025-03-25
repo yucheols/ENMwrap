@@ -14,7 +14,7 @@ resp_data_pull <- function(sp.name, model, names.var) {
   resp.data <- list()
 
   for (i in 1:length(names.var)) {
-    resp <- as.data.frame(dismo::response(x = model, var = names.var[[i]]))
+    resp <- as.data.frame(predicts::partialResponse(model = model, var = names.var[[i]]))
     colnames(resp) = c('x','y')
     resp$var = names.var[[i]]
     resp.data[[i]] <- resp
