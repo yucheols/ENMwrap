@@ -34,7 +34,7 @@ test_multisp <- function(taxon.list, occs.list, envs, bg, tune.args, partitions,
       # make models
       eval <- ENMeval::ENMevaluate(taxon.name = taxon.list[[i]], occs = occs.list[[i]], envs = envs, bg = bg[[i]], tune.args = tune.args,
                                    partitions = partitions, partition.settings = partition.settings, user.grp = user.grp[[i]], doClamp = T,
-                                   algorithm = 'maxent.jar', parallel = T, parallelType = 'doSNOW')
+                                   algorithm = 'maxent.jar', parallel = T)
 
       # get results
       eval.res <- eval.results(eval)

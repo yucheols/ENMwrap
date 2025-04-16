@@ -64,7 +64,7 @@ test_multibg <- function(taxon.name, occs, envs, bg.list, tune.args, partitions,
       # make models
       eval <- ENMeval::ENMevaluate(taxon.name = taxon.name, occs = occs, envs = envs, bg = bg.list[[i]],
                                    tune.args = tune.args, partitions = partitions, partition.settings = partition.settings,
-                                   user.grp = user.grp[[i]], doClamp = T, algorithm = 'maxent.jar', parallel = T, parallelType = 'doSNOW')
+                                   user.grp = user.grp[[i]], doClamp = T, algorithm = 'maxent.jar', parallel = T)
 
       # get results
       eval.res <- ENMeval::eval.results(eval)
