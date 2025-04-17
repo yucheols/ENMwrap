@@ -1,4 +1,17 @@
-
+#' Coordinate data cleaner to remove points that fall within pixels with no data (NA cells)
+#'
+#' If you are using user-specified folds (e.g. folds generated through blockCV, etc.), points that fall within pixels with no data can create errors when tuning the models
+#' later on because the model tuning run will automatically drop these points but points sampled in the folds are not dropped. This creates a mismatch between the number of
+#' samples included in the folds and the actual number of points used to generate the models. This function cleans the coordinate data and removes the points that fall within
+#' NA pixels. The function returns cleaned coordinate data that can then be used to generate spatial CV folds.
+#'
+#' @param pts A list of coordinate data
+#' @param envs A RasterStack of envirnonmental variables from which to sample pixel values
+#' @param x Character. Longitude column name
+#' @returns If more than one coordinate dataset was input as a list, a list of cleaned coordinate dataset is returned.
+#' If one coordinate dataset is provided, a dataframe of cleaned dataset is returned.
+#' @examples
+#' clean.coords <- na_cleaner(pts = point.data, envs = envs, x = 'long', y = 'lat')
 
 
 na_cleaner <- function(pts, envs, x, y) {

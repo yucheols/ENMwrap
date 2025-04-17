@@ -14,7 +14,7 @@ plot_response(
 )
 }
 \arguments{
-\item{resp.data}{A data.frame object output from "respDataPull" function}
+\item{resp.data}{A data.frame object output from "resp_data_pull" function}
 
 \item{ncol}{The number of columns to use for ggplot2 facetting. Default is NULL}
 

@@ -1,6 +1,6 @@
 #' Plot MaxEnt response curves
 #'
-#' @param resp.data A data.frame object output from "respDataPull" function
+#' @param resp.data A data.frame object output from "resp_data_pull" function
 #' @param ncol The number of columns to use for ggplot2 facetting. Default is NULL
 #' @param nrow The number of rows to use for ggplot2 facetting. Default is NULL
 #' @param color Color palette to use for response curves
