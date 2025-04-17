@@ -53,8 +53,8 @@ test_multibg <- function(taxon.name, occs, envs, bg.list, tune.args, partitions,
       contrib[[i]] <- var.imp
 
       # get optimal predictions per iteration
-      opt.pred <- ENMeval::eval.predictions(eval)[[opt.param$tune.args]]
-      preds[[i]] <- opt.pred
+      opt.pred <- ENMeval::eval.predictions(eval)[[as.numeric(opt.param$tune.args)]]
+      preds[[i]] <- raster::raster(opt.pred)
       preds.stack <- raster::stack(preds)
     }
   }
@@ -86,8 +86,8 @@ test_multibg <- function(taxon.name, occs, envs, bg.list, tune.args, partitions,
       contrib[[i]] <- var.imp
 
       # get optimal predictions per iteration
-      opt.pred <- ENMeval::eval.predictions(eval)[[opt.param$tune.args]]
-      preds[[i]] <- opt.pred
+      opt.pred <- ENMeval::eval.predictions(eval)[[as.numeric(opt.param$tune.args)]]
+      preds[[i]] <- raster::raster(opt.pred)
       preds.stack <- raster::stack(preds)
     }
   }
