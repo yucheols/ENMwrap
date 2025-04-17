@@ -57,7 +57,7 @@ test_multisp <- function(taxon.list, occs.list, envs, bg, tune.args, partitions,
       contrib[[i]] <- var.imp
 
       # get optimal predictions per iteration
-      opt.pred <- ENMeval::eval.predictions(eval)[[opt.param$tune.args]]
+      opt.pred <- ENMeval::eval.predictions(eval)[[as.numeric(opt.param$tune.args)]]
       preds[[i]] <- opt.pred
       preds.stack <- raster::stack(preds)
     }
@@ -92,7 +92,7 @@ test_multisp <- function(taxon.list, occs.list, envs, bg, tune.args, partitions,
       contrib[[i]] <- var.imp
 
       # get optimal predictions per iteration
-      opt.pred <- ENMeval::eval.predictions(eval)[[opt.param$tune.args]]
+      opt.pred <- ENMeval::eval.predictions(eval)[[as.numeric(opt.param$tune.args)]]
       preds[[i]] <- opt.pred
       preds.stack <- raster::stack(preds)
 
