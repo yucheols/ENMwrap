@@ -7,7 +7,8 @@
 #'
 #' @param pts A list of coordinate data
 #' @param envs A RasterStack of envirnonmental variables from which to sample pixel values
-#' @param x Character. Longitude column name
+#' @param x Character. Longitude column name (e.g. 'long')
+#' @param y Character. Latitude column name (e.g. 'lat')
 #' @returns If more than one coordinate dataset was input as a list, a list of cleaned coordinate dataset is returned.
 #' If one coordinate dataset is provided, a dataframe of cleaned dataset is returned.
 #' @examples

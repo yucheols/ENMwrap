@@ -11,7 +11,9 @@ na_cleaner(pts, envs, x, y)
 
 \item{envs}{A RasterStack of envirnonmental variables from which to sample pixel values}
 
-\item{x}{Character. Longitude column name}
+\item{x}{Character. Longitude column name (e.g. 'long')}
+
+\item{y}{Character. Latitude column name (e.g. 'lat')}
 }
 \value{
 If more than one coordinate dataset was input as a list, a list of cleaned coordinate dataset is returned.
