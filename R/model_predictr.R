@@ -16,14 +16,15 @@ model_predictr <- function(model, preds.list, pred.names, method) {
 
   if(method == 'single2multi') {
     for (i in 1:length(preds.list)) {
-      make.pred <- dismo::predict(object = model, x = preds.list[[i]], progress = 'text')
-      output[[i]] <- make.pred
+      pred_spat <- terra::rast(preds.list[[i]])
+      make.pred <- predicts::predict(object = model, x = pred_spat)
+      output[[i]] <- raster::raster(make.pred)
     }
   }
   else if(method == 'multi2single') {
     for (i in 1:length(model)) {
-      make.pred <- dismo::predict(object = model[[i]], x = preds.list, progress = 'text')
-      output[[i]] <- make.pred
+      make.pred <- predicts::predict(object = model[[i]], x = terra::rast(preds.list))
+      output[[i]] <- raster::raster(make.pred)
     }
   }
   output.pred <- raster::stack(output)
