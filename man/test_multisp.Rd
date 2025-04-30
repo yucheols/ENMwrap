@@ -27,7 +27,7 @@ test_multisp(
 
 \item{tune.args}{A named list containing feature class settings ("fc") and regularization values ("rm"). Use ?ENMevaluate for details}
 
-\item{partitions}{Character. The name of data partitioning strategy to use for model evaluations. Can select from: "randomkfold", "block", "checkerboard1", "checkerboard2", "testing", and "user"}
+\item{partitions}{Character. The name of data partitioning strategy to use for model evaluations. Can select from: "randomkfold", "block", "checkerboard", "testing", and "user"}
 
 \item{partition.settings}{A named list used to specify settings for the selected partitioning scheme}
 
