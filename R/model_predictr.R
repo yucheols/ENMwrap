@@ -16,8 +16,7 @@ model_predictr <- function(model, preds.list, pred.names, method) {
 
   if(method == 'single2multi') {
     for (i in 1:length(preds.list)) {
-      pred_spat <- terra::rast(preds.list[[i]])
-      make.pred <- predicts::predict(object = model, x = pred_spat)
+      make.pred <- predicts::predict(object = model, x = preds.list[[i]])
       output[[i]] <- raster::raster(make.pred)
     }
   }
