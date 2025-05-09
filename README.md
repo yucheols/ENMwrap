@@ -9,10 +9,11 @@ devtools::install_github('yucheols/ENMwrap')
 ```
 
 ## Software and package dependencies
+This package relies heavily on existing ENM and spatial data processing packages. Please check the dependencies below and cite them appropriately.
 
 *The package will be updated soon to remove raster and rgdal dependencies* 
-- R (version 4.2.2 or higher)
-- ENMeval (version 2.0.4)
+- R (version 4.2.2 or higher; most recently tested with R version 4.4.2)
+- ENMeval (version 2.0.5)
 - dismo (version 1.3.14)
 - SDMtune (version 1.3.1)
 - ecospat (version 4.0.0)
