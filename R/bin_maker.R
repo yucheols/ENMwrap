@@ -10,6 +10,7 @@ bin_maker <- function(preds, th) {
   require(ecospat)
   require(terra)
   require(raster)
+  require(dplyr)
 
   binary.maps <- list()
 
