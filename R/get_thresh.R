@@ -17,6 +17,8 @@
 #' thresh <- get_thresh(preds = preds, occs.list = list(occs.sp1, occs.sp2, occs.sp3, occs.sp4, occs.sp5, occs.sp6), type = 'p10')
 
 get_thresh <- function(preds, occs.list, type = 'mtp') {
+  require(raster, quietly = T)
+
   output <- list()
 
   for (i in 1:nlayers(preds)) {
