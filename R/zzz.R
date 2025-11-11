@@ -1,3 +1,3 @@
 .onAttach <- function(libname, pkgname) {
-  packageStartupMessage("Well noted with many taaaaaaaank you for using the *ENMwrap* package! 🐍")
+  packageStartupMessage("Thank you for using the *ENMwrap* package! 🐍 This package depends heavily on existing niche modeling packages. Please make sure to cite them when you use this pipeline!")
 }
