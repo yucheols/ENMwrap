@@ -7,7 +7,7 @@
 #' @examples
 #' bias <- get_bias_grid(targ.pts = targ.pts, envs = envs, poly = poly)
 
-get_bias_grid <- function(targ.pts, envs, poly = NULL) {
+get_bias_grid <- function(targ.pts, envs, poly) {
   require(raster, quietly = T)
   require(rgdal, quietly = T)
   require(MASS, quietly = T)
