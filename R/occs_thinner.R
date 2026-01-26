@@ -19,6 +19,7 @@ occs_thinner <- function(occs_list, envs, long, lat, spp_list){
     thin <- SDMtune::thinData(coords = occs, env = terra::rast(envs), x = long, y = lat, verbose = T, progress = T)
     output[[i]] <- thin
     output[[i]]$species <- spp_list[[i]]
+    output[[i]] <- output[[i]] %>% dplyr::select(3,1,2)
   }
   print('====================   DONE   ====================')
   return(output)
